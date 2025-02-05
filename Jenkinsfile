@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
         DOCKER_REPO = 'fercdevv/jenkins-node'
-        KUBE_DEPLOYMENT_NAME='mi-app'
+        KUBE_DEPLOYMENT_NAME='mi-app-paulgiraldo'
     }
 
     stages {
@@ -78,7 +78,7 @@ pipeline {
             agent any
             steps {
                 withKubeConfig([credentialsId: 'minikube-kubeconfig']) {
-                    sh "kubectl set image deployment/$KUBE_DEPLOYMENT_NAME mi-app=$DOCKER_REPO:latest"
+                    sh "kubectl set image deployment/$KUBE_DEPLOYMENT_NAME mi-app-paulgiraldo=$DOCKER_REPO:latest"
                 }
             }
         }
@@ -86,7 +86,7 @@ pipeline {
 
     post {
         success {
-            mail to: 'lcruzfarfan@gmail.com',
+            mail to: 'paulgiraldo72@gmail.com',
                  subject: "Pipeline ${env.JOB_NAME} ejecucion correcta",
                  body: """
                  Hola,

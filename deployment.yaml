@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mi-app
+  name: mi-app-paulgiraldo
   labels:
-    app: mi-app
+    app: mi-app-paulgiraldo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mi-app
+      app: mi-app-paulgiraldo
   template:
     metadata:
       labels:
-        app: mi-app
+        app: mi-app-paulgiraldo
     spec:
       containers:
-        - name: mi-app
+        - name: mi-app-paulgiraldo
           image: fercdevv/jenkins-node:latest
           ports:
             - containerPort: 3000
@@ -23,10 +23,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mi-app-service
+  name: mi-app-service-paulgiraldo
 spec:
   selector:
-    app: mi-app
+    app: mi-app-paulgiraldo
   ports:
     - protocol: TCP
       port: 80
