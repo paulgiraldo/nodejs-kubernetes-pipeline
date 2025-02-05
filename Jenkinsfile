@@ -96,7 +96,7 @@ pipeline {
                  Los detalles se pueden revisar en el siguiente enlace:
                  ${env.BUILD_URL}
 
-                 Saludos,
+                 Saludos .
                  Jenkins Server
                  """
         }
