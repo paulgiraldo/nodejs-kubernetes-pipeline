@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
-        DOCKER_REPO = 'fercdevv/jenkins-node'
+        DOCKER_REPO = 'paulgiraldo/jenkins-node'
         KUBE_DEPLOYMENT_NAME='mi-app-paulgiraldo'
     }
 
